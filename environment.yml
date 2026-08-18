@@ -1,0 +1,42 @@
+# environment.yml
+# ================
+# Conda-forge environment for EPTONiCS. FEniCSx / PETSc / mpi4py are
+# most reliably obtained through conda-forge; see docs/installation.md
+# for platform-specific notes and for a from-source alternative.
+#
+# Create with:
+#   conda env create -f environment.yml
+#   conda activate eptonics
+#   pip install -e .
+#
+# NOTE ON VERSION PINNING: only `fenics-dolfinx` is pinned to the exact
+# version reported in manuscript Table 2 (Appendix A). UFL and basix
+# are installed automatically as matching transitive dependencies of
+# fenics-dolfinx (their conda-forge package names are `fenics-ufl` and
+# `fenics-basix`). NumPy, SciPy, Numba, and Matplotlib are given
+# lower-bound (`>=`) rather than exact pins for the same reason: the
+# exact patch versions in the manuscript's table may not (yet, or ever)
+# have a published conda-forge build, and over-constraining a solve
+# across ~10 packages is a common source of unsatisfiable-environment
+# errors. After creation, check what was actually installed with:
+#   python -c "import dolfinx, ufl, basix, petsc4py; \
+#       print(dolfinx.__version__, ufl.__version__, basix.__version__)"
+
+name: eptonics
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - fenics-dolfinx=0.9.0    # pulls in matching fenics-ufl, fenics-basix, fenics-ffcx
+  - petsc                    # avoid over-pinning; let it resolve alongside dolfinx=0.9.0
+  - petsc4py
+  - mpich                    # or openmpi, per your cluster's MPI stack
+  - mpi4py
+  - numpy>=1.24
+  - scipy>=1.11
+  - numba>=0.58               # optional: JIT-parallel constitutive kernel
+  - matplotlib>=3.8           # optional: post-processing plots
+  - pip
+  - pip:
+      - -e .
+

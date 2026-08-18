@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eptonics"
+version = "1.1.0"
+description = "Elastoplastic Topology Optimization in FEniCSx (BESO + J2 plasticity + path-dependent adjoint sensitivity)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Avinandan Modak" },
+    { name = "Rajib Chowdhury" },
+    { name = "Tarun Gangwar", email = "tarun.gangwar@ce.iitr.ac.in" },
+]
+keywords = [
+    "topology optimization",
+    "elastoplasticity",
+    "BESO",
+    "FEniCSx",
+    "J2 plasticity",
+    "adjoint sensitivity",
+    "path-dependent optimization",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+]
+
+# Core numerical dependencies of the shared library (eptonics.constitutive).
+# The full FEniCSx / PETSc / mpi4py stack used by the example drivers is
+# most reliably installed via conda-forge — see environment.yml and
+# docs/installation.md — and is intentionally NOT pinned here, since pip
+# alone cannot reliably resolve DOLFINx's compiled dependencies on all
+# platforms.
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+numba = ["numba>=0.58"]
+examples = ["matplotlib>=3.8"]
+
+[project.urls]
+Repository = "https://github.com/<org>/EPTONICS"
+
+[tool.setuptools.packages.find]
+where = ["src"]

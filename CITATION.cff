@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: >-
+  If you use EPTONiCS in your research, please cite both the
+  accompanying manuscript and this software release.
+title: "EPTONiCS: Elastoplastic Topology Optimization in FEniCSx"
+type: software
+version: 1.1.0
+authors:
+  - given-names: Avinandan
+    family-names: Modak
+    affiliation: Indian Institute of Technology Roorkee
+  - given-names: Rajib
+    family-names: Chowdhury
+    affiliation: Indian Institute of Technology Roorkee
+  - given-names: Tarun
+    family-names: Gangwar
+    affiliation: Indian Institute of Technology Roorkee
+    email: tarun.gangwar@ce.iitr.ac.in
+license: MIT
+repository-code: "https://github.com/<org>/EPTONICS"
+keywords:
+  - topology optimization
+  - elastoplasticity
+  - BESO
+  - FEniCSx
+  - J2 plasticity
+  - adjoint sensitivity
+  - path-dependent optimization
+preferred-citation:
+  type: article
+  title: >-
+    EPTONiCS: An Efficient FEniCSx Implementation for Three-Dimensional
+    Topology Optimization of Elastoplastic Structures
+  authors:
+    - given-names: Avinandan
+      family-names: Modak
+    - given-names: Rajib
+      family-names: Chowdhury
+    - given-names: Tarun
+      family-names: Gangwar
+  journal: "Structural and Multidisciplinary Optimization"
+  year: 2026

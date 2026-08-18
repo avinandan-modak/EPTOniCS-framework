@@ -1,0 +1,37 @@
+# requirements.txt
+# =================
+# Pip-installable subset of the EPTONiCS dependency stack. This file
+# alone is NOT sufficient to run the example drivers: DOLFINx, UFL,
+# basix, PETSc/petsc4py, and mpi4py require a compiled FEniCSx
+# installation that is most reliably obtained via conda-forge (see
+# environment.yml and docs/installation.md). Use requirements.txt when
+# you already have a working FEniCSx environment (e.g. an HPC module,
+# a Spack install, or the official FEniCSx Docker image) and only need
+# the remaining pure-Python dependencies.
+#
+#   pip install -r requirements.txt
+#   pip install -e .
+#
+# NOTE: lower-bound (>=) rather than exact (==) pins are used
+# deliberately. Manuscript Table 2 (Appendix A) reports the exact
+# versions used for the paper's benchmarks (NumPy 2.4.3, SciPy 1.17.1,
+# Numba 0.65.0, Matplotlib 3.10.8); those exact patch releases may not
+# be available on PyPI by the time you install this, and pip has no
+# equivalent of conda's "closest compatible version" solving for an
+# unsatisfiable exact pin — an == pin here would simply fail outright.
+# If you need to reproduce the paper's exact environment, install
+# these exact versions manually and confirm they resolve for your
+# platform first.
+numpy>=1.24
+scipy>=1.11
+numba>=0.58          # optional: JIT-parallel constitutive kernel
+matplotlib>=3.8      # optional: post-processing plots
+
+# NOT pip-installable in general — install via conda-forge or your site's
+# FEniCSx module instead (see environment.yml):
+#   fenics-dolfinx (0.9.0 in the manuscript's benchmarks)
+#   fenics-ufl / ufl (pulled in automatically alongside fenics-dolfinx)
+#   fenics-basix / basix (pulled in automatically alongside fenics-dolfinx)
+#   petsc, petsc4py
+#   mpi4py
+
