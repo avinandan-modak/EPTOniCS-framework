@@ -134,9 +134,10 @@ in `docs/theory.md` and `docs/implementation.md`.
 
 ## License
 
-MIT — see `LICENSE`. (This is a default choice for the open-source
-release; the manuscript itself does not specify a license. Replace
-`LICENSE` before publishing if a different license is intended.)
+This work is licensed under the Creative Commons Attribution 4.0
+International License (CC BY 4.0). 
+Full legal text of this license is available at:
+https://creativecommons.org/licenses/by/4.0/legalcode
 
 ## Citation
 
