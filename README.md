@@ -16,6 +16,8 @@ large-scale 3D elastoplastic topology optimization (millions of Gauss
 points) computationally tractable on modern multi-core workstations
 and portable to HPC clusters.
 
+![EPTOniCS](docs/EPTOniCS.png)
+
 This repository accompanies the manuscript:
 
 > A. Modak, R. Chowdhury, T. Gangwar. *EPTONiCS: An Efficient FEniCSx
