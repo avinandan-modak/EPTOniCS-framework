@@ -1,8 +1,8 @@
-# EPTONiCS
+# EPTOniCS
 
 **E**lasto**p**lastic **T**opology **O**ptimizatio**n** **i**n Feni**CS**x
 
-EPTONiCS is an open-source, educational framework for three-dimensional
+EPTOniCS is an open-source, educational framework for three-dimensional
 elastoplastic topology optimization built on the
 [FEniCSx](https://fenicsproject.org/) finite-element platform. It
 couples a well-established bi-directional evolutionary structural
